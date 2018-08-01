@@ -7,10 +7,12 @@ class MyWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('PaintEvent Demo')
-        self.resize(640,480)
+        self.pix = QPixmap('image/mask.png')
+        self.resize(self.pix.size())
+        self.setMask(self.pix.mask())
     def paintEvent(self, event):
         painter = QPainter(self)
-        pixmap = QPixmap('image/python.jpg')
+        pixmap = QPixmap('image/desktop.jpg')
         #painter.setBrush(Qt.black)
         painter.drawPixmap(self.rect(),pixmap)
 
