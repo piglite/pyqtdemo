@@ -40,7 +40,7 @@ class MyWin(QWidget):
 
 app = QApplication(sys.argv)
 m = MyWin()
-m.show()
+m.show()#
 sys.exit(app.exec())
 
 
